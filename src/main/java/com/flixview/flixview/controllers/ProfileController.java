@@ -36,4 +36,8 @@ public class ProfileController {
         return profileService.checkIfUserCanAddProfile(profileRequestDTO);
     }
 
+    @DeleteMapping(path = "/remove-by-id")
+    public ResponseEntity<Object> removeProfileById(@RequestBody ProfileRequestDTO profileRequestDTO) throws Exception {
+        return profileService.removeProfileById(profileRequestDTO);
+    }
 }

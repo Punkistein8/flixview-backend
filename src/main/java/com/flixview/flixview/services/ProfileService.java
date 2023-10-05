@@ -155,5 +155,21 @@ public class ProfileService {
         );
     }
 
+    public ResponseEntity<Object> removeProfileById(ProfileRequestDTO profileRequestDTO) throws Exception {
+        HashMap<String, Object> response = new HashMap<>();
+        Long id_pro = profileRequestDTO.getId_pro();
+
+        Profile profile = profileRepository.findById(id_pro)
+                .orElseThrow(() -> new Exception("Profile with id " + id_pro + " not found"));
+
+        profileRepository.delete(profile);
+
+        response.put("data", profile);
+        response.put("message", "Profile successfully deleted!");
+        return new ResponseEntity<>(
+                response,
+                HttpStatus.OK
+        );
+    }
 
 }

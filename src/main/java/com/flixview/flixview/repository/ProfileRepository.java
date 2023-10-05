@@ -16,4 +16,6 @@ public interface ProfileRepository extends JpaRepository<Profile, Long> {
     List<Profile> getProfilesByFkiduse(Userflix fkiduse);
 
     Optional<Profile> findByName(String name);
+
+    Optional<Profile> removeProfileById(Long id_pro);
 }

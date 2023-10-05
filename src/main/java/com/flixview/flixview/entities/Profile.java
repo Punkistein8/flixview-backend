@@ -8,7 +8,7 @@ public class Profile {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_pro;
+    private Long id;
 
     @Column(name = "name", nullable = false, unique = true)
     private String name;
@@ -24,7 +24,7 @@ public class Profile {
     private Userflix fkiduse;
 
     public Long getId_pro() {
-        return id_pro;
+        return id;
     }
 
     public Profile(String name, String contentType_pro, String state_pro, Userflix fkiduse) {
@@ -37,8 +37,8 @@ public class Profile {
     public Profile() {
     }
 
-    public void setId_pro(Long id_pro) {
-        this.id_pro = id_pro;
+    public void setId_pro(Long id) {
+        this.id = id;
     }
 
     public String getName() {
