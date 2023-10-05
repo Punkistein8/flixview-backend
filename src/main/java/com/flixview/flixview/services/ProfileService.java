@@ -4,8 +4,6 @@ import com.flixview.flixview.entities.*;
 import com.flixview.flixview.repository.PlanRepository;
 import com.flixview.flixview.repository.ProfileRepository;
 import com.flixview.flixview.repository.UserflixRepository;
-import jdk.swing.interop.SwingInterOpUtils;
-import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
