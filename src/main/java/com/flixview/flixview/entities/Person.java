@@ -22,8 +22,8 @@ public class Person {
     private String photo_per;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "fk_id_use", referencedColumnName = "id_use")
-    private Userflix fk_id_use;
+    @JoinColumn(name = "fkIdUse", referencedColumnName = "id_use")
+    private Userflix fkIdUse;
 
     public Person() {
 
@@ -62,10 +62,10 @@ public class Person {
     }
 
     public Userflix getFk_id_use() {
-        return fk_id_use;
+        return fkIdUse;
     }
 
-    public void setFk_id_use(Userflix fk_id_use) {
-        this.fk_id_use = fk_id_use;
+    public void setFk_id_use(Userflix fkIdUse) {
+        this.fkIdUse = fkIdUse;
     }
 }

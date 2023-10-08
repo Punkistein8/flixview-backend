@@ -24,11 +24,11 @@ public class Userflix {
     @Column(name = "age", nullable = false)
     private int age;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "fk_id_pla", referencedColumnName = "id")
     private Plan fk_id_pla;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "fk_id_rol", referencedColumnName = "id", nullable = true)
     private Role fk_id_rol;
 

@@ -26,10 +26,15 @@ public class PersonController {
         this.personService = personService;
     }
 
+    @GetMapping(path = "/{id}")
+    public ResponseEntity<Object> getPersonByUserId(@PathVariable Long id) throws Exception {
+        return personService.getPersonByUserId(id);
+    }
+
     @PostMapping
-    public ResponseEntity<Object> updatePersonByUser(@RequestBody PersonRequestDTO personRequestDTO) throws Exception {
+    public ResponseEntity<Object> addPerson(@RequestBody PersonRequestDTO personRequestDTO) throws Exception {
         try {
-            Person person = personService.updatePerson(personRequestDTO);
+            Person person = personService.addPerson(personRequestDTO);
             return new ResponseEntity<>(
                     person,
                     HttpStatus.OK
@@ -41,4 +46,22 @@ public class PersonController {
             );
         }
     }
+
+    @PutMapping(path = "/{id}")
+    public ResponseEntity<Object> updatePerson(@PathVariable Long id, @RequestBody PersonRequestDTO personRequestDTO) throws Exception {
+        try {
+            Person person = personService.updatePersonById(id, personRequestDTO);
+            return new ResponseEntity<>(
+                    person,
+                    HttpStatus.OK
+            );
+        } catch (Exception ex) {
+            return new ResponseEntity<>(
+                    "Error -> " + ex.getMessage(),
+                    HttpStatus.NOT_FOUND
+            );
+        }
+    }
+
+
 }

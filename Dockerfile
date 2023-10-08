@@ -1,7 +1,7 @@
-FROM eclipse-temurin:17-jdk
+FROM openjdk:17-jdk-alpine
 
 WORKDIR /app
 
 COPY ./target/flixview-0.0.1-SNAPSHOT.jar /app
 
-ENTRYPOINT ["java", "-jar", "flixview-0.0.1-SNAPSHOT.jar"]
+CMD ["java", "-jar", "flixview-0.0.1-SNAPSHOT.jar"]
